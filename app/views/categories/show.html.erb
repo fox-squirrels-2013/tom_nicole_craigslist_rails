@@ -1,0 +1,14 @@
+<p>This is the showing of the categories</p>
+<%= form_for @post, url: postings_path do |f| %>
+  Title: <%= f.text_field :title %><br />
+  Content: <%= f.text_area :body %><br />
+  <%= hidden_field_tag :category_id, "#{@id}" %><br />
+  <%= f.submit "New Post" %>
+<% end%>
+
+<br>
+<% if @postings %>
+  <% @postings.each do |post| %>
+    <%= link_to "#{post.title}", post %><br>
+  <% end %>
+<% end %>
