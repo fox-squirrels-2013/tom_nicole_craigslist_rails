@@ -1,0 +1,6 @@
+<p><%= @post.title %></p>
+
+<%= render partial: "form" %>
+
+<br />
+<%= button_to 'Destroy', {:controller => :postings, :action => 'destroy', :id => @post.id }, :confirm => 'Sure you are?', :method => :delete %>
