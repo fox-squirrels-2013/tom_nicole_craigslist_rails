@@ -5,6 +5,6 @@
 <br>
 <% if @postings %>
   <% @postings.each do |post| %>
-    <%= link_to "#{post.title}", post %><br>
+    <%= link_to "#{post.title}", postings_path + "/#{post.id}" %><br>
   <% end %>
 <% end %>

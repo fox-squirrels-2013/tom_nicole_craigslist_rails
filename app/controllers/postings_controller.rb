@@ -8,7 +8,7 @@ class PostingsController < ActionController::Base
     p params
     # "posting"=>{"title"=>"I like toast", "body"=>"Mmmm yes"}, "category_id"=>"1"
     @post = Posting.create title: params[:posting][:title], body: params[:posting][:body], category_id: params[:category_id]
-    redirect_to :action => :edit, :id => @post.id
+    redirect_to :action => :edit, :id => @post.slug
   end
 
   def edit
