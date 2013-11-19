@@ -7,13 +7,13 @@ class PostingsController < ActionController::Base
   def create 
     p params
     # "posting"=>{"title"=>"I like toast", "body"=>"Mmmm yes"}, "category_id"=>"1"
-    @new_post = Posting.create title: params[:posting][:title], body: params[:posting][:body], category_id: params[:category_id]
-    redirect_to :action => :edit, :id => @new_post.id
+    @post = Posting.create title: params[:posting][:title], body: params[:posting][:body], category_id: params[:category_id]
+    redirect_to :action => :edit, :id => @post.id
   end
 
   def edit
     @id = params[:id]
-    @new_post = Posting.find(@id)
+    @post = Posting.find(@id)
   end
 
   def destroy

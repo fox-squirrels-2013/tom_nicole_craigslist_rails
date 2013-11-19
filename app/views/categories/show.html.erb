@@ -1,10 +1,6 @@
 <p>This is the showing of the categories</p>
-<%= form_for @post, url: postings_path do |f| %>
-  Title: <%= f.text_field :title %><br />
-  Content: <%= f.text_area :body %><br />
-  <%= hidden_field_tag :category_id, "#{@id}" %><br />
-  <%= f.submit "New Post" %>
-<% end%>
+
+<%= render partial: "postings/form", locals: { form: 'posting' } %>
 
 <br>
 <% if @postings %>

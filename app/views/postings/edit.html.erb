@@ -1,10 +1,6 @@
-<p><%= @new_post.title %></p>
+<p><%= @post.title %></p>
 
-<%= form_for @new_post, url: postings_path + "/#{@new_post.id}" do |f| %>
-  Title: <%= f.text_field :title %><br />
-  Content: <%= f.text_area :body %><br />
-  <%= f.submit "Update Post" %>
-<% end %>
+<%= render partial: "form" %>
 
 <br />
-<%= button_to 'Destroy', {:controller => :postings, :action => 'destroy', :id => @new_post.id }, :confirm => 'Sure you are?', :method => :delete %>
+<%= button_to 'Destroy', {:controller => :postings, :action => 'destroy', :id => @post.id }, :confirm => 'Sure you are?', :method => :delete %>
