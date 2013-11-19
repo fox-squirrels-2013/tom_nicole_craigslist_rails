@@ -1,0 +1,10 @@
+<p>This is the showing of the categories</p>
+
+<%= render partial: "postings/form", locals: { form: 'posting' } %>
+
+<br>
+<% if @postings %>
+  <% @postings.each do |post| %>
+    <%= link_to "#{post.title}", postings_path + "/#{post.id}" %><br>
+  <% end %>
+<% end %>
